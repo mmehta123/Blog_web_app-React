@@ -6,7 +6,6 @@ const bcrypt=require("bcrypt");
 // Register
 router.post('/register',async(req,res)=>{
     try{
-        console.log("Heil")
         const {username,email,password}=req.body;
         const hashedPassword=await bcrypt.hash(password,8);
         const user=await UserModel.create({
@@ -14,7 +13,6 @@ router.post('/register',async(req,res)=>{
         });
         return res.status(200).json(user);
     }catch(e){
-        console.log(e.message);
         return res.status(500).json({message: e.message});
     }
 });

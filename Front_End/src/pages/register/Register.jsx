@@ -20,7 +20,6 @@ export default function Register() {
             res.data && navigate("/login")
         }catch(e){
             setError(e);
-            console.log(error.message)
         }
     }
     return (
