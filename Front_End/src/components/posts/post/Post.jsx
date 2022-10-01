@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 
 export const Post = ({ post }) => {
+    const PF="http://localhost:5000/images/";
     return (
         <div className='post'>
-            <img className="postImg" alt="post img" src={post.photo ? post.photo : "https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"} />
+            <img className="postImg" alt="post img" src={post.photo ? `${PF+post.photo}` : "https://images.pexels.com/photos/281260/pexels-photo-281260.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"} />
             <div className='postInfo'>
                 <div className="postCats">
                     {

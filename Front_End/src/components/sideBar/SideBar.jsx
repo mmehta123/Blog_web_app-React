@@ -20,7 +20,7 @@ export const SideBar = () => {
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.
           Ex officiis laudantium illum accusantium vel commodi.</p>
       </div>
-      <div className="sideBarItem" style={{ width: "100%",border:"1px solid" }}>
+      <div className="sideBarItem" style={{ width: "100%"}}>
         <span className="sideBarTitle">CATEGORIES</span>
         <ul className="sideBarList" >{cat.map((c,i) => (
           <Link to={`/?cat=${c.name}`} key={i} className="link">

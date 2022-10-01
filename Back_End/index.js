@@ -6,19 +6,21 @@ const authRoute = require('./Routes/auth.route');
 const userRoute = require('./Routes/user.route');
 const postRoute = require('./Routes/post.route');
 const categoryRoute = require('./Routes/category.route');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+app.use("/images", express.static(path.join(__dirname,  "/images")));
 
 // Multer upload
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, "./images");
+        cb(null, "images");
     },
     filename: (req, file, cb) => {
-        cb(null, "image123.jpeg");
+        cb(null, req.body.name);
     },
 });
 const upload = multer({ storage: storage });
