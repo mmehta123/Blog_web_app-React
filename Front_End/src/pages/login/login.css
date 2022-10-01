@@ -34,6 +34,10 @@
     background-color: teal;
     border-radius: 10px;
 }
+.loginButton:disabled{
+    cursor: not-allowed;
+    background-color: rgb(172, 81, 81) ;
+}
 .loginRegisterButton{
     border: none;
     color: white;

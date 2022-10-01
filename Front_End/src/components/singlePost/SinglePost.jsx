@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import "./singlePost.css"
 
-export default function SinglePost() {
+export default function SinglePost({ currentPost }) {
+    const { pathname } = useLocation();
     return (
         <div className="singlePost">
             <div className="singlePostWrapper">
-                <img src="https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1000" alt=""
-                    className="singlePostImg" />
+                <img className="postImg" alt="post img" src={currentPost.photo ? currentPost.photo : "https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg?auto=compress&cs=tinysrgb&w=1000"} />
                 <h1 className="singlePostTitle">
-                    Lorem ipsum dolor sit amet consectetur
+                    {currentPost.title}
                     <div className="singlePostEdit">
                         <i className="singlePostIcon fa-regular fa-pen-to-square"></i>
                         <i className="singlePostIcon fa-regular fa-trash-can"></i>
@@ -16,17 +17,14 @@ export default function SinglePost() {
                 </h1>
                 <div className="singlePostInfo">
                     <span className="singlePostAuthor">
-                        Author: <b>Kevin</b>
+                        Author:
+                        <Link to={`/?user=${currentPost.username}`} className="link">
+                            <b>{currentPost.username}</b>
+                        </Link>
                     </span>
-                    <span className="singlePostDate">1 hour ago</span>
+                    <span className="singlePostDate">{new Date(currentPost.createdAt).toDateString()}</span>
                 </div>
-                <p className="singlePostDesc">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure earum fugit suscipit,
-                    alias nulla magnam quo sapiente architecto corrupti itaque sed volupt atum error.
-                    Amet provident in itaque sit, temporibus laborum, aliquam suscipit excepturi dicta eaque eos odio harum id maxime tenetur fuga adipisci,
-                    voluptatum enim mollitia consequatur perspiciatis quasi. Voluptate error fuga in eos. Facere soluta, laborum tenetur harum ducimus expedita.
-                    Harum autem reprehenderit officiis nostrum possimus expedita odit voluptatem.
-                </p> 
+                <p className="singlePostDesc">{currentPost.desc}</p>
             </div>
         </div>
     )

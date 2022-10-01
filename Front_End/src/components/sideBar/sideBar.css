@@ -36,12 +36,14 @@
     padding: 30px;
 }
 .sideBarList{
+    width: 80%;
     list-style: none;
     margin-bottom: 30px;
 }
 .sideBarListItem{
     display: inline-block;
-    width: 50%;
+    width: 45%;
+    margin-left: 10px;
     margin-top: 15px;
     cursor: pointer;
 }
