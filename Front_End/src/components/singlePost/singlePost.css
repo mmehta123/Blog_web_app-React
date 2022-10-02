@@ -4,6 +4,8 @@
 .singlePostWrapper {
   padding: 20px;
   padding-right: 0;
+  display: flex;
+  flex-direction: column;
 }
 .singlePostImg {
   border-radius: 10px;
@@ -12,6 +14,12 @@
   object-fit: cover;
 }
 .singlePostTitle {
+  text-align: center;
+  margin: 10px;
+  font-family: "Lora", serif;
+  font-size: 28px;
+}
+.singlePostTitleInput {
   text-align: center;
   margin: 10px;
   font-family: "Lora", serif;
@@ -44,7 +52,25 @@
   font: 18px;
   line-height: 25px;
 }
+.singlePostDescInput {
+  color: #666;
+  font: 18px;
+  line-height: 25px;
+}
 .singlePostDesc::first-letter {
   font-size: 30px;
   font-weight: 600;
+}
+
+.singlPostButton{
+  background-color: teal;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color:white;
+  width: 20%;
+  align-self: flex-end;
+  margin: 10px 0 10px 10px;
+  font-weight: bold;
+  cursor: pointer;  
 }
